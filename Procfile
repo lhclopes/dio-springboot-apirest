@@ -1,1 +1,1 @@
-web: java -Dspring.profiles.active=prod -jar target/apirestrailway-0.0.1-SNAPSHOT.jar
+web: java -Dspring.profiles.active=prd -jar target/apirestrailway-0.0.1-SNAPSHOT.jar
