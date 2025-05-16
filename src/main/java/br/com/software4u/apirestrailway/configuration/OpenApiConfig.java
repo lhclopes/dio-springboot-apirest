@@ -11,9 +11,10 @@ public class OpenApiConfig {
 
     @Bean
     public OpenAPI customOpenAPI() {
+        System.out.println("Configuracao SWAGGER");
         return new OpenAPI()
             .info(new Info()
-                .title("API Rest - Desafio")
+                .title("API Rest - Railway")
                 .version("1.0.0")
                 .description("Documentação da API usando springdoc-openapi"));
     }

@@ -45,19 +45,24 @@ public class UserServiceImpl implements UserService {
         ofNullable(userToCreate.getCard()).orElseThrow(() -> new BusinessException("User card must not be null."));
 
         this.validateChangeableId(userToCreate.getId(), "created");
+
         if (userRepository.existsByAccountNumber(userToCreate.getAccount().getNumber())) {
             throw new BusinessException("This account number already exists.");
         }
+
         if (userRepository.existsByCardNumber(userToCreate.getCard().getNumber())) {
             throw new BusinessException("This card number already exists.");
         }
+
         return this.userRepository.save(userToCreate);
     }
 
     @Transactional
     public User update(Long id, User userToUpdate) {
         this.validateChangeableId(id, "updated");
+
         User dbUser = this.findById(id);
+
         if (!dbUser.getId().equals(userToUpdate.getId())) {
             throw new BusinessException("Update IDs must be the same.");
         }
@@ -74,6 +79,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void delete(Long id) {
         this.validateChangeableId(id, "deleted");
+
         User dbUser = this.findById(id);
         this.userRepository.delete(dbUser);
     }

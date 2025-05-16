@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "ApirestRailwayApplication",
+            "request": "launch",
+            "mainClass": "br.com.software4u.apirestrailway.ApirestRailwayApplication",
+            "projectName": "apirestrailway",
+            "vmArgs": "-Dspring.profiles.active=prd",
+            "env": {
+                "DB_HOST": "trolley.proxy.rlwy.net",
+                "DB_PORT": "23485",
+                "DB_NAME": "railway",
+                "DB_USER": "postgres",
+                "DB_PASS": "zgtOZKBhAbrdxTFXSdHgZFWSahevKnWm"
+            }
+        },
+        {
+            "type": "java",
+            "name": "TesteHackerHank",
+            "request": "launch",
+            "mainClass": "br.com.software4u.teste.TesteHackerHank",
+            "projectName": "apirestrailway"
+        }
+    ]
+}
